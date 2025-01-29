@@ -118,13 +118,44 @@ print(mensaje)
 # Pide al usuario que introduzca dos números y muestra un mensaje
 # indicando cuál es mayor o si son iguales
 
+numero1 = int(input("Introduce el primer número: "))
+numero2 = int(input("Introduce el segundo número: "))
+
+if numero1 > numero2:
+  print(f"{numero1} es mayor que {numero2}")
+elif numero1 < numero2:
+  print(f"{numero2} es mayor que {numero1}")
+
+
 # Ejercicio 2: Calculadora simple
 # Pide al usuario dos números y una operación (+, -, *, /)
 # Realiza la operación y muestra el resultado (maneja la división entre zero)
 
+numero1 = int(input("Introduce el primer número: "))
+numero2 = int(input("Introduce el segundo número: "))
+operacion = input("Introduce la operación (+, -, *, /): ")
+
+if operacion == "+":
+  print(f"El resultado es: {numero1 + numero2}")  
+elif operacion == "-":
+  print(f"El resultado es: {numero1 - numero2}")
+elif operacion == "*":
+  print(f"El resultado es: {numero1 * numero2}")
+elif operacion == "/":
+  if numero2 == 0:
+    print("No se puede dividir entre cero")
+  else:
+    print(f"El resultado es: {numero1 / numero2}")
+
 # Ejercicio 3: Año bisiesto
 # Pide al usuario que introduzca un año y determina si es bisiesto.
 # Un año es bisiesto si es divisible por 4, excepto si es divisible por 100 pero no por 400.
+
+year = int(input("Introduce un año: "))
+if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
+  print(f"{year} es un año bisiesto")
+else:
+  print(f"{year} no es un año bisiesto")  
 
 # Ejercicio 4: Categorizar edades
 # Pide al usuario que introduzca una edad y la clasifique en:
@@ -133,3 +164,16 @@ print(mensaje)
 # - Adolescente (13-17 años)
 # - Adulto (18-64 años)
 # - Adulto mayor (65 años o más)
+
+edad = int(input("Introduce tu edad: "))
+
+if edad >= 0 and edad <= 2:
+  print("Eres un bebé")
+elif edad >= 3 and edad <= 12:
+  print("Eres un niño")
+elif edad >= 13 and edad <= 17:
+  print("Eres un adolescente")
+elif edad >= 18 and edad <= 64:
+  print("Eres un adulto")
+else:
+  print("Eres un adulto mayor")
